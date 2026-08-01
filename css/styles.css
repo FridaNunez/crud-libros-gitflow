@@ -1,215 +1,335 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  min-height: 100vh;
-  padding: 30px;
+/* =====================================================
+   BODY
+===================================================== */
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+body{
 
-  background-color: #f4f6f8;
-  color: #1f2937;
+  min-height:100vh;
+
+  padding:30px;
+
+  font-family:Arial, Helvetica, sans-serif;
+
+  background:#f4f6f8;
+
+  color:#1f2937;
+
 }
 
-.container {
-  width: 100%;
-  max-width: 1100px;
+.container{
 
-  margin: 0 auto;
+  width:100%;
+
+  max-width:1100px;
+
+  margin:0 auto;
+
 }
 
+/* =====================================================
+   HEADER
+===================================================== */
 
+.header{
 
-.header {
-  margin-bottom: 30px;
+  margin-bottom:30px;
+
 }
 
-.header h1 {
-  margin-bottom: 8px;
+.header h1{
 
-  font-size: 2rem;
+  margin-bottom:8px;
+
+  font-size:2rem;
+
 }
 
-.header p {
-  color: #64748b;
+.header p{
+
+  color:#64748b;
+
 }
 
+/* =====================================================
+   SECCIONES
+===================================================== */
 
+section{
 
-section {
-  margin-bottom: 25px;
-  padding: 25px;
+  margin-bottom:30px;
 
-  background-color: #ffffff;
+  padding:25px;
 
-  border-radius: 12px;
+  background:#fff;
 
-  box-shadow:
-    0 2px 8px
-    rgba(0, 0, 0, 0.08);
+  border-radius:12px;
+
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+
 }
 
-section h2 {
-  margin-bottom: 20px;
+section h2{
 
-  font-size: 1.3rem;
+  margin-bottom:20px;
+
 }
 
+/* =====================================================
+   FORMULARIO
+===================================================== */
 
+.form-grid{
 
-.form-grid {
-  display: grid;
+  display:grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns:repeat(2,1fr);
 
-  gap: 18px;
+  gap:18px;
+
 }
 
-.form-group {
-  display: flex;
+.form-group{
 
-  flex-direction: column;
+  display:flex;
+
+  flex-direction:column;
+
 }
 
-.form-group label {
-  margin-bottom: 7px;
+.form-group label{
 
-  font-weight: 600;
+  margin-bottom:8px;
+
+  font-weight:600;
+
 }
 
-.form-group input {
-  width: 100%;
+.form-group input{
 
-  padding: 11px 12px;
+  padding:12px;
 
-  font-size: 0.95rem;
+  border:1px solid #cbd5e1;
 
-  border:
-    1px solid
-    #cbd5e1;
+  border-radius:6px;
 
-  border-radius: 6px;
+  font-size:.95rem;
 
-  outline: none;
 }
 
-.form-group input:focus {
-  border-color: #2563eb;
+.form-group input:focus{
 
-  box-shadow:
-    0 0 0 3px
-    rgba(37, 99, 235, 0.15);
+  outline:none;
+
+  border-color:#2563eb;
+
+  box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
 }
 
+/* =====================================================
+   BOTONES
+===================================================== */
 
+.form-actions{
 
+  margin-top:25px;
 
-.form-actions {
-  margin-top: 20px;
 }
 
-.btn {
-  padding: 11px 20px;
+.btn{
 
-  border: none;
+  padding:11px 20px;
 
-  border-radius: 6px;
+  border:none;
 
-  font-size: 0.95rem;
+  border-radius:6px;
 
-  font-weight: 600;
+  font-size:.95rem;
 
-  cursor: pointer;
+  cursor:pointer;
+
+  font-weight:600;
+
 }
 
-.btn-primary {
-  color: #ffffff;
+.btn-primary{
 
-  background-color: #2563eb;
+  background:#2563eb;
+
+  color:white;
+
 }
 
-.btn-primary:hover {
-  background-color: #1d4ed8;
+.btn-primary:hover{
+
+  background:#1d4ed8;
+
 }
 
+#books-table .btn{
 
+  margin-right:8px;
 
+  background:#e2e8f0;
 
-.table-container {
-  overflow-x: auto;
+  color:#475569;
+
 }
 
-table {
-  width: 100%;
+#books-table .btn:disabled{
 
-  border-collapse: collapse;
+  opacity:.6;
+
+  cursor:not-allowed;
+
 }
 
-th,
-td {
-  padding: 13px 12px;
+/* =====================================================
+   MENSAJES
+===================================================== */
 
-  text-align: left;
+.form-message{
 
-  border-bottom:
-    1px solid
-    #e2e8f0;
+  margin-top:15px;
+
+  padding:10px;
+
+  border-radius:6px;
+
+  min-height:20px;
+
 }
 
-th {
-  color: #334155;
+.form-message.success{
 
-  background-color: #f1f5f9;
+  background:#dcfce7;
+
+  color:#166534;
+
 }
 
+.form-message.error{
 
+  background:#fee2e2;
 
-.empty-message {
-  padding: 25px 10px;
+  color:#991b1b;
 
-  color: #64748b;
-
-  text-align: center;
 }
 
+/* =====================================================
+   TABLA
+===================================================== */
 
+.list-section{
 
-.footer {
-  padding: 15px 0;
+  margin-top:30px;
 
-  color: #94a3b8;
-
-  text-align: center;
-
-  font-size: 0.9rem;
 }
 
+.table-container{
 
+  overflow-x:auto;
 
+}
 
-@media (max-width: 700px) {
+#books-table{
 
-  body {
-    padding: 15px;
+  width:100%;
+
+  border-collapse:collapse;
+
+  margin-top:15px;
+
+}
+
+#books-table th,
+
+#books-table td{
+
+  padding:12px;
+
+  border-bottom:1px solid #e2e8f0;
+
+  text-align:left;
+
+}
+
+#books-table th{
+
+  background:#f1f5f9;
+
+}
+
+#books-table tbody tr:hover{
+
+  background:#f8fafc;
+
+}
+
+/* =====================================================
+   LISTA VACÍA
+===================================================== */
+
+.empty-message{
+
+  display:none;
+
+  padding:25px;
+
+  text-align:center;
+
+  color:#64748b;
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:700px){
+
+  body{
+
+    padding:15px;
+
   }
 
-  .form-grid {
-    grid-template-columns: 1fr;
+  .form-grid{
+
+    grid-template-columns:1fr;
+
   }
 
-  section {
-    padding: 18px;
+  section{
+
+    padding:18px;
+
   }
 
-  .header h1 {
-    font-size: 1.6rem;
+  .header h1{
+
+    font-size:1.6rem;
+
+  }
+
+  #books-table th,
+
+  #books-table td{
+
+    font-size:.9rem;
+
+    padding:10px;
+
   }
 
 }
