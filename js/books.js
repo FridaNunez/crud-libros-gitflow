@@ -14,7 +14,9 @@ function renderBooks() {
     );
 
 
-  if (books.length === 0) {
+  if (
+    books.length === 0
+  ) {
 
     booksBody.innerHTML =
       "";
@@ -63,7 +65,7 @@ function renderBooks() {
             <button
               type="button"
               class="btn"
-              disabled
+              onclick="editBook(${book.id})"
             >
               Editar
             </button>
@@ -71,7 +73,7 @@ function renderBooks() {
             <button
               type="button"
               class="btn"
-              disabled
+              onclick="removeBook(${book.id})"
             >
               Eliminar
             </button>
@@ -89,6 +91,56 @@ function renderBooks() {
 
   booksBody.innerHTML =
     rows;
+
+}
+
+
+function editBook(
+  id
+) {
+
+  const books =
+    getBooks();
+
+  const book =
+    books.find(
+      (item) =>
+        item.id === id
+    );
+
+  if (!book) {
+
+    return;
+
+  }
+
+  loadBookForEdit(
+    book
+  );
+
+}
+
+
+function removeBook(
+  id
+) {
+
+  const confirmed =
+    confirm(
+      "¿Está seguro de que desea eliminar este libro?"
+    );
+
+  if (!confirmed) {
+
+    return;
+
+  }
+
+  deleteBook(
+    id
+  );
+
+  renderBooks();
 
 }
 

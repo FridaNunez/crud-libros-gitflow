@@ -333,27 +333,3 @@ section h2{
   }
 
 }
-
-.form-message {
-  min-height: 20px;
-
-  margin-top: 15px;
-
-  padding: 10px;
-
-  border-radius: 6px;
-
-  font-size: 0.9rem;
-}
-
-.form-message.error {
-  color: #991b1b;
-
-  background-color: #fee2e2;
-}
-
-.form-message.success {
-  color: #166534;
-
-  background-color: #dcfce7;
-}
