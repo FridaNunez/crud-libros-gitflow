@@ -102,3 +102,22 @@ function updateBook(
   return books[index];
 
 }
+
+function deleteBook(
+  id
+) {
+
+  const books =
+    getBooks();
+
+  const filteredBooks =
+    books.filter(
+      (book) =>
+        book.id !== id
+    );
+
+  saveBooks(
+    filteredBooks
+  );
+
+}
