@@ -114,7 +114,11 @@ document.addEventListener(
       }
 
 
+
       form.reset();
+
+
+      renderBooks();
 
 
       renderBooks();
