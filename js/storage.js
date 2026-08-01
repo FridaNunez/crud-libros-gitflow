@@ -1,37 +1,65 @@
+const STORAGE_KEY =
+  "books";
 
-
-const STORAGE_KEY = "books";
 
 function getBooks() {
-  const books = localStorage.getItem(STORAGE_KEY);
 
-  if (!books) {
+  const data =
+    localStorage.getItem(
+      STORAGE_KEY
+    );
+
+  if (!data) {
+
     return [];
+
   }
 
-  return JSON.parse(books);
+  return JSON.parse(
+    data
+  );
+
 }
 
 
-function saveBooks(books) {
+function saveBooks(
+  books
+) {
+
   localStorage.setItem(
     STORAGE_KEY,
-    JSON.stringify(books)
+    JSON.stringify(
+      books
+    )
   );
+
 }
 
-function addBook(book) {
-  const books = getBooks();
+
+function addBook(
+  book
+) {
+
+  const books =
+    getBooks();
 
   const newBook = {
-    id: Date.now().toString(),
+
+    id:
+      Date.now(),
 
     ...book
+
   };
 
-  books.push(newBook);
+  books.push(
+    newBook
+  );
 
-  saveBooks(books);
+  saveBooks(
+    books
+  );
 
   return newBook;
+
 }
