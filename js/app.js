@@ -1,3 +1,7 @@
+let editingBookId =
+  null;
+
+
 document.addEventListener(
   "DOMContentLoaded",
   () => {
@@ -56,25 +60,65 @@ document.addEventListener(
       }
 
 
-      const newBook =
-        addBook(
-          book
+      if (
+        editingBookId === null
+      ) {
+
+        const newBook =
+          addBook(
+            book
+          );
+
+        console.log(
+          "Libro agregado:",
+          newBook
         );
 
 
-      console.log(
-        "Libro agregado:",
-        newBook
-      );
+        showMessage(
+          "Libro guardado correctamente.",
+          "success"
+        );
+
+      }
+
+      else {
+
+        const updatedBook =
+          updateBook(
+            editingBookId,
+            book
+          );
+
+        console.log(
+          "Libro actualizado:",
+          updatedBook
+        );
+
+
+        showMessage(
+          "Libro actualizado correctamente.",
+          "success"
+        );
+
+
+        editingBookId =
+          null;
+
+
+        document.querySelector(
+          "#book-form button[type='submit']"
+        ).textContent =
+          "Guardar libro";
+
+      }
+
 
 
       form.reset();
 
 
-      showMessage(
-        "Libro guardado correctamente.",
-        "success"
-      );
+      renderBooks();
 
 
       renderBooks();
@@ -208,3 +252,43 @@ document.addEventListener(
 
   }
 );
+
+
+function loadBookForEdit(
+  book
+) {
+
+  editingBookId =
+    book.id;
+
+
+  document.getElementById(
+    "title"
+  ).value =
+    book.title;
+
+
+  document.getElementById(
+    "author"
+  ).value =
+    book.author;
+
+
+  document.getElementById(
+    "year"
+  ).value =
+    book.year;
+
+
+  document.getElementById(
+    "genre"
+  ).value =
+    book.genre;
+
+
+  document.querySelector(
+    "#book-form button[type='submit']"
+  ).textContent =
+    "Actualizar libro";
+
+}

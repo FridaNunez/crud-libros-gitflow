@@ -63,3 +63,42 @@ function addBook(
   return newBook;
 
 }
+
+
+function updateBook(
+  id,
+  updatedBook
+) {
+
+  const books =
+    getBooks();
+
+  const index =
+    books.findIndex(
+      (book) =>
+        book.id === id
+    );
+
+  if (
+    index === -1
+  ) {
+
+    return null;
+
+  }
+
+  books[index] = {
+
+    ...books[index],
+
+    ...updatedBook
+
+  };
+
+  saveBooks(
+    books
+  );
+
+  return books[index];
+
+}
