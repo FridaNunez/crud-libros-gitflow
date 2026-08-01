@@ -73,7 +73,7 @@ function renderBooks() {
             <button
               type="button"
               class="btn"
-              disabled
+              onclick="removeBook(${book.id})"
             >
               Eliminar
             </button>
@@ -117,6 +117,30 @@ function editBook(
   loadBookForEdit(
     book
   );
+
+}
+
+
+function removeBook(
+  id
+) {
+
+  const confirmed =
+    confirm(
+      "¿Está seguro de que desea eliminar este libro?"
+    );
+
+  if (!confirmed) {
+
+    return;
+
+  }
+
+  deleteBook(
+    id
+  );
+
+  renderBooks();
 
 }
 
