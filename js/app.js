@@ -2,85 +2,123 @@ document.addEventListener(
   "DOMContentLoaded",
   () => {
 
+    renderBooks();
+
+
     const form =
       document.getElementById(
         "book-form"
       );
+
 
     const message =
       document.getElementById(
         "form-message"
       );
 
+
     form.addEventListener(
       "submit",
       handleSubmit
     );
 
-    function handleSubmit(event) {
+
+    function handleSubmit(
+      event
+    ) {
 
       event.preventDefault();
+
 
       const book =
         getFormData();
 
-      const errors =
-        validateBook(book);
 
-      if (errors.length > 0) {
+      const errors =
+        validateBook(
+          book
+        );
+
+
+      if (
+        errors.length > 0
+      ) {
 
         showMessage(
-          errors.join(" "),
+          errors.join(
+            " "
+          ),
           "error"
         );
 
         return;
+
       }
 
+
       const newBook =
-        addBook(book);
+        addBook(
+          book
+        );
+
 
       console.log(
         "Libro agregado:",
         newBook
       );
 
+
       form.reset();
+
 
       showMessage(
         "Libro guardado correctamente.",
         "success"
       );
 
+
+      renderBooks();
+
     }
 
-     
+
     function getFormData() {
 
       return {
 
         title:
           document
-            .getElementById("title")
+            .getElementById(
+              "title"
+            )
             .value
             .trim(),
 
+
         author:
           document
-            .getElementById("author")
+            .getElementById(
+              "author"
+            )
             .value
             .trim(),
+
 
         year:
           Number(
             document
-              .getElementById("year")
+              .getElementById(
+                "year"
+              )
               .value
           ),
 
+
         genre:
           document
-            .getElementById("genre")
+            .getElementById(
+              "genre"
+            )
             .value
             .trim()
 
@@ -88,11 +126,18 @@ document.addEventListener(
 
     }
 
-    function validateBook(book) {
 
-      const errors = [];
+    function validateBook(
+      book
+    ) {
 
-      if (!book.title) {
+      const errors =
+        [];
+
+
+      if (
+        !book.title
+      ) {
 
         errors.push(
           "El título es obligatorio."
@@ -100,7 +145,10 @@ document.addEventListener(
 
       }
 
-      if (!book.author) {
+
+      if (
+        !book.author
+      ) {
 
         errors.push(
           "El autor es obligatorio."
@@ -108,12 +156,17 @@ document.addEventListener(
 
       }
 
+
       if (
+
         !Number.isInteger(
           book.year
         )
+
         ||
+
         book.year <= 0
+
       ) {
 
         errors.push(
@@ -122,7 +175,10 @@ document.addEventListener(
 
       }
 
-      if (!book.genre) {
+
+      if (
+        !book.genre
+      ) {
 
         errors.push(
           "El género es obligatorio."
@@ -130,11 +186,12 @@ document.addEventListener(
 
       }
 
+
       return errors;
 
     }
 
-   
+
     function showMessage(
       text,
       type
@@ -142,6 +199,7 @@ document.addEventListener(
 
       message.textContent =
         text;
+
 
       message.className =
         `form-message ${type}`;
