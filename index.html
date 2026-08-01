@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Biblioteca Personal</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>📚 Biblioteca Personal</h1>
+      <p>Gestión sencilla de libros</p>
+    </header>
+
+    <main>
+
+      <!-- Formulario base -->
+      <section class="form-section">
+
+        <h2>Nuevo libro</h2>
+
+        <form id="book-form">
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="title">Título</label>
+
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Ejemplo: Cien años de soledad"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="author">Autor</label>
+
+              <input
+                type="text"
+                id="author"
+                name="author"
+                placeholder="Ejemplo: Gabriel García Márquez"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="year">Año de publicación</label>
+
+              <input
+                type="number"
+                id="year"
+                name="year"
+                placeholder="Ejemplo: 1967"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="genre">Género</label>
+
+              <input
+                type="text"
+                id="genre"
+                name="genre"
+                placeholder="Ejemplo: Novela"
+              >
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+
+            <button
+              type="submit"
+              id="submit-btn"
+              class="btn btn-primary"
+            >
+              Guardar libro
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+      <!-- Lista base -->
+      <section class="list-section">
+
+        <h2>Lista de libros</h2>
+
+        <div class="table-container">
+
+          <table>
+
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Año</th>
+                <th>Género</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+
+            <tbody id="books-body">
+
+              <!-- Los libros se agregarán en feature/list-books -->
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <p id="empty-message" class="empty-message">
+          No hay libros registrados.
+        </p>
+
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>Biblioteca Personal — CRUD de Libros</p>
+    </footer>
+
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/books.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
